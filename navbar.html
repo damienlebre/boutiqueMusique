@@ -4,15 +4,99 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="assets\css\bootstrap.min.css" rel="stylesheet">
-    <link href="assets\css\style.css" rel="stylesheet">
-    <script defer src="assets/js/bootstrap.bundle.js"></script>
-    <script defer src="assets/js/script.js"></script>
-    <title>Document</title>
+    <title>Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+    .navbar {
+        background: transparent;
+        box-shadow: var(--shadow-6);
+      }
+      @media only screen and (max-width: 1200px) {
+        .navbar {
+          background-color: #f5f5f5;
+        }
+      }
+      
+      .anim-nav {
+        background-color: #f5f5f5;
+      }
+      
+      .anim-nav .nav-link {
+        color: #0d0d0d;
+      }
+      
+      .anim-nav .nav-link:hover {
+        color: #f20505;
+      }
+      
+      #mainNav {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-family: "poppins", sans-serif;
+        font-weight: 400;
+      }
+      #mainNav .navbar-brand {
+        color: var(--bs-primary);
+      }
+      #mainNav .navbar-nav {
+        margin-top: 1rem;
+      }
+      #mainNav .navbar-nav li.nav-item a.nav-link {
+        color: var(--bs-gray-400);
+      }
+      #mainNav .navbar-nav li.nav-item a.nav-link:hover {
+        color: #f20505;
+      }
+      #mainNav .navbar-nav li.nav-item a.nav-link:active,
+      #mainNav .navbar-nav li.nav-item a.nav-link:focus {
+        color: #f5f5f5;
+      }
+      #mainNav .navbar-nav li.nav-item a.nav-link.active {
+        color: #f20505;
+      }
+      #mainNav .navbar-toggler {
+        font-size: 80%;
+        padding: 0.8rem;
+      }
+      
+      @media (min-width: 992px) {
+        #mainNav {
+          padding-top: 1.5rem;
+          padding-bottom: 1.5rem;
+          transition: padding-top 0.5s, padding-bottom 0.5s;
+        }
+        #mainNav .navbar-brand {
+          font-size: 1.75em;
+          transition: font-size 0.5s;
+        }
+        #mainNav .navbar-nav {
+          margin-top: 0;
+        }
+        #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
+          color: var(--light);
+          background: var(--primary);
+          border-radius: 25px 10px;
+        }
+        #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active,
+        #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus,
+        #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
+          color: var(--light);
+          background: var(--primary);
+        }
+      
+        #mainNav.navbar-shrink {
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+        }
+        #mainNav.navbar-shrink .navbar-brand {
+          font-size: 1.5em;
+        }
+      }
+      </style>
 </head>
 <body>
- <!-- NAVBAR -->
- <nav class="navbar navbar-expand-lg navbar-dark text-uppercase fixed-top shadow p-3 mb-5 bg-body rounded" id="mainNav">
+    <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark text-uppercase fixed-top shadow p-3 mb-5 bg-body rounded" id="mainNav">
     <div class="container-fluid">
       <a id="titleNavbar" class="navbar-brand" href="#page-top">Nom de la boite</a>
       <button class="navbar-toggler btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,32 +149,68 @@
     </div>
   </nav>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+  <script>// NAVBAR CHANGEMENT DE COULEUR AU SCROLL
+    const navigation = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 160){
+             navigation.classList.add('anim-nav');
+        } else {
+            navigation.classList.remove('anim-nav');
+        }
+     })
     
-
-
-    <footer class="footer">
-        <!-- Call-action -->
-        <div class="call-action">
-            <div class="container">
-                <div class="inner-content">
-                    <div class="row align-items-center">
-                        <div class="col-12 align-center">
-                            <h2>MusiqueBoutique</h2>
-                            <hr>
-                            <p class="project">Projet réalisé en équipe.</p> 
-                            <hr class="secondaryHr mx-auto">
-                            <p class="credits">Coded by MARBOUTIN Pierre, VENANT Jean-Phillippe et LEBRE Damien.</p>
-                            <p class="design">Designed by LEBRE Damien.</p>    
-                            <hr class="secondaryHr mx-auto">                            
-                            <p class="cci">Formation DWWM CCI Brioude 2021/2022.</p>
-                        </div>
-                            
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Call-action -->
-    </footer>    
+    
+    
+    
+    
+    // NAVBAR FERMETURE AU CLICK SUR UN LIEN  EN MODE MOBILE
+      window.addEventListener('DOMContentLoaded', event => {
+    
+        // Réduction de la taille au scroll et fil d'ariane
+        var navbarShrink = function () {
+            const navbarCollapsible = document.body.querySelector('#mainNav');
+            if (!navbarCollapsible) {
+                return;
+            }
+            if (window.scrollY === 0) {
+                navbarCollapsible.classList.remove('navbar-shrink')
+            } else {
+                navbarCollapsible.classList.add('navbar-shrink')
+            }
+    
+        };
+    
+        // RÃ©duire la barre de navigation 
+        navbarShrink();
+    
+        // RÃ©duire la barre de navigation lors du dÃ©filement de la page
+        document.addEventListener('scroll', navbarShrink);
+    
+        //Activez Bootstrap scrollspy sur l'Ã©lÃ©ment de navigation principal
+        const mainNav = document.body.querySelector('#mainNav');
+        if (mainNav) {
+            new bootstrap.ScrollSpy(document.body, {
+                target: '#mainNav',
+                offset: 72,
+            });
+        };
+    
+        // RÃ©duire la barre de navigation rÃ©active lorsque le basculeur est visible
+        const navbarToggler = document.body.querySelector('.navbar-toggler');
+        const responsiveNavItems = [].slice.call(
+            document.querySelectorAll('#navbarResponsive .nav-link')
+        );
+        responsiveNavItems.map(function (responsiveNavItem) {
+            responsiveNavItem.addEventListener('click', () => {
+                if (window.getComputedStyle(navbarToggler).display !== 'none') {
+                    navbarToggler.click();
+                }
+            });
+        });
+    
+    });
+    </script>
 </body>
 </html>

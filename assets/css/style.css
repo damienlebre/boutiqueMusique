@@ -1,3 +1,96 @@
+/* ------GENERAL---------- */
+html{
+    min-height: 100%;
+}
+body{
+    min-height: 100%;
+}
+/* ------NAVBAR-------- */
+.navbar {
+    background: transparent;
+    box-shadow: var(--shadow-6);
+  }
+  @media only screen and (max-width: 1200px) {
+    .navbar {
+      background-color: #f5f5f5;
+    }
+  }
+  
+  .anim-nav {
+    background-color: #f5f5f5;
+  }
+  
+  .anim-nav .nav-link {
+    color: #0d0d0d;
+  }
+  
+  .anim-nav .nav-link:hover {
+    color: #f20505;
+  }
+  
+  #mainNav {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: "poppins", sans-serif;
+    font-weight: 400;
+  }
+  #mainNav .navbar-brand {
+    color: var(--bs-primary);
+  }
+  #mainNav .navbar-nav {
+    margin-top: 1rem;
+  }
+  #mainNav .navbar-nav li.nav-item a.nav-link {
+    color: var(--bs-gray-400);
+  }
+  #mainNav .navbar-nav li.nav-item a.nav-link:hover {
+    color: #f20505;
+  }
+  #mainNav .navbar-nav li.nav-item a.nav-link:active,
+  #mainNav .navbar-nav li.nav-item a.nav-link:focus {
+    color: #f5f5f5;
+  }
+  #mainNav .navbar-nav li.nav-item a.nav-link.active {
+    color: #f20505;
+  }
+  #mainNav .navbar-toggler {
+    font-size: 80%;
+    padding: 0.8rem;
+  }
+  
+  @media (min-width: 992px) {
+    #mainNav {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      transition: padding-top 0.5s, padding-bottom 0.5s;
+    }
+    #mainNav .navbar-brand {
+      font-size: 1.75em;
+      transition: font-size 0.5s;
+    }
+    #mainNav .navbar-nav {
+      margin-top: 0;
+    }
+    #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
+      color: var(--light);
+      background: var(--primary);
+      border-radius: 25px 10px;
+    }
+    #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active,
+    #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus,
+    #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
+      color: var(--light);
+      background: var(--primary);
+    }
+  
+    #mainNav.navbar-shrink {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    #mainNav.navbar-shrink .navbar-brand {
+      font-size: 1.5em;
+    }
+  }
 /*--------------- FOOTER----------------- */
 *{
     margin: 0;
@@ -7,7 +100,7 @@ footer {
     background-color: #131418;  
     text-align: center;
     margin-top: 100px;
-    /* position: fixed;     */
+    position: fixed;    
     bottom: 0;    
     width: 100%;  
     color: #f2f5f7;
