@@ -9,11 +9,11 @@
     <script defer src="assets/js/bootstrap.bundle.js"></script>
     <script defer src="assets/js/bootstrap.js"></script>
     <script defer src="assets/js/script.js"></script>
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark text-uppercase fixed-top shadow p-3 mb-5 bg-body rounded" id="mainNav">
+ <!-- NAVBAR -->
+ <nav class="navbar navbar-expand-lg navbar-dark text-uppercase fixed-top shadow p-3 mb-5 bg-body rounded" id="mainNav">
     <div class="container-fluid">
       <a id="titleNavbar" class="navbar-brand" href="index.html">Musique Brioude</a>
       <button class="navbar-toggler btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,71 +66,91 @@
     </div>
   </nav>
 <!-- /NAVBAR -->
-
-  <section class="lesCards">
-    <div class="container my-5">
-        
-        <div class="row row-cols g-2 g-md-2 g-lg-4 ">
-        <hr class="my-1">
-        <!-- card 1 -->
-        <div class="card col-12 col-md-4 border-0 bg-light my-3 ">
-            <div class="card-body d-flex flex-column align-content-end p-0">
-            <h2 class="card-title text-center fs-3">Guitares Electriques</h2>
-            <img src="assets/img/electric.jpg" class="card-img-top" alt="...">
-
-            <p class="card-text fs-6">Découvrez notre gameme de guitares électriques.</p>
-            <a href="https://legends.pokemon.com/fr-fr/story/" target="_blank" class="btn text-white fw-bolder rounded-pill mt-auto bd-highlight" style="background-color: #fe0016; width: 100%;"">Go &gt</a>           
-            </div>
-        </div>     
-        <!-- card 2 -->
-        <div class="card col-12 col-md-4 border-0 bg-light my-3 ">
-            <div class="card-body d-flex flex-column align-content-end p-0">
-            <h2 class="card-title text-center fs-3 ">Basses Electriques</h2>
-            <img src="assets/img/basse.jpg" class="card-img-top" alt="...">
-
-            <p class="card-text">Découvrez notre gameme de basses électriques.</p>
-            <a href="https://legends.pokemon.com/fr-fr/gameplay/" target="_blank" class="btn text-white fw-bolder rounded-pill mt-auto bd-highlight" style="background-color: #fe0016; width: auto;">Go &gt</a>           
-            </div>
-        </div>          
-        <!-- card 3 -->
-        <div class="card col-12 col-md-4 border-0 bg-light my-3 ">
-            <div class="card-body d-flex flex-column align-content-end p-0">
-            <h2 class="card-title text-center fs-3">Guitares accoustiques</h2>
-            <img src="assets/img/guitare2.jpg" class="card-img-top" alt="...">
-
-            <p class="card-text">Découvrez notre gameme de guitares accoustiques.</p>            
-            <a href="https://legends.pokemon.com/fr-fr/pokemon/" target="_blank" class="btn text-white fw-bolder rounded-pill mt-auto bd-highlight" style="background-color: #fe0016; width: 100%;"">Go &gt</a>           
-            </div>
-        </div>
-        </div>
-    </div>
-</section>
-
+  
+<section class="contact" id="contact" style="padding-top: 200px;">
     
+  
+  <div class="container bg-light">
+      <div class="row">
+        <div class="col-lg-12">
+          <div>
+            <h2 class="display-5 fw-bold lh-1 mb-3"><i class="bi bi-envelope-open bi-primary"></i> Contactez-nous</h2>
+            <p class="lead text-info fw-bold lh-1 mb-3"><i class="bi bi-arrow-return-right bi-information"></i> Vos infos restent chez nous !</p>
+            <?php if($_GET['msg']=='send'){echo($msg);} ?>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Wrapper container -->
+    <div class="container bg-light py-4">
 
+      <!-- ====== FORMULAIRE ====== -->
+      <form method="post">
 
-    <footer class="footer">
-        <!-- Call-action -->
-        <div class="call-action">
-            <div class="container">
-                <div class="inner-content">
-                    <div class="row align-items-center">
-                        <div class="col-12 align-center">
-                            <h2>Musique Brioude Boutique</h2>
-                            <hr>
-                            <p class="project">Projet réalisé en équipe.</p> 
-                            <hr class="secondaryHr mx-auto">
-                            <p class="credits">Coded by MARBOUTIN Pierre, VENANT Jean-Phillippe et LEBRE Damien.</p>
-                            <p class="design">Designed by LEBRE Damien.</p>    
-                            <hr class="secondaryHr mx-auto">                            
-                            <p class="cci">Formation DWWM CCI Brioude 2021/2022.</p>
-                        </div>
-                            
+        <!-- Name input -->
+        <div class="mb-3">
+          <label class="form-label" for="name">Nom</label>
+          <input class="form-control" type="text" placeholder="Nom" name="name" required />
+        </div>
+
+        <!-- firstname input -->
+        <div class="mb-3">
+          <label class="form-label" for="firstname">Prénom</label>
+          <input class="form-control" type="text" placeholder="Prénom" name="firstname" required />
+        </div>
+
+        <!-- Email address input -->
+        <div class="mb-3">
+          <label class="form-label" for="email">Email</label>
+          <input class="form-control" type="email" name="email" placeholder="Email" required />
+          <xlall id="email" class="form-text text-info"><i class="bi bi-arrow-return-right bi-information"></i> Nous ne partageons jamais votre e-mail !</xlall>
+        </div>
+
+        <!-- Subject input -->
+        <div class="mb-3">
+          <label class="form-label" for="subject">Objet</label>
+          <input class="form-control" type="text" name="subject" placeholder="Objet" required />
+        </div>
+
+        <!-- Message input -->
+        <div class="mb-3">
+          <label class="form-label" for="message">Message</label>
+          <textarea class="form-control" name="message" type="text" placeholder="Message" style="height: 10rem;"></textarea>
+        </div>
+
+        <!-- Form submit Plus de détails -->
+        <div class="text-center">
+          <button class="btn btn-danger btn-lg btn-hover" type="submit" name="submit">Envoyer <i class="bi bi-envelope"></i></button>
+        </div>
+
+      </form>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <!-- Call-action -->
+    <div class="call-action">
+        <div class="container">
+            <div class="inner-content">
+                <div class="row align-items-center">
+                    <div class="col-12 align-center">
+                        <h2>Musique Brioude Boutique</h2>
+                        <hr>
+                        <p class="project">Projet réalisé en équipe.</p> 
+                        <hr class="secondaryHr mx-auto">
+                        <p class="credits">Coded by MARBOUTIN Pierre, VENANT Jean-Phillippe et LEBRE Damien.</p>
+                        <p class="design">Designed by LEBRE Damien.</p>    
+                        <hr class="secondaryHr mx-auto">                            
+                        <p class="cci">Formation DWWM CCI Brioude 2021/2022.</p>
                     </div>
+                        
                 </div>
             </div>
         </div>
-        <!-- End Call-action -->
-    </footer>    
+    </div>
+    <!-- End Call-action -->
+</footer>    
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
