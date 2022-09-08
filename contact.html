@@ -66,60 +66,91 @@
     </div>
   </nav>
 <!-- /NAVBAR -->
-<!-- CARROUSSEL -->
-<div class="container-fluid carroussel mt-5 pb-4">
-    <div class="row carroussel">
-    <div class="col-xs-1" >   
-            
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="assets/img/guitare.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="assets/img/violon.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="assets/img/banjo.jpg" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-    </div>
-    </div>
-  </div>
+  
+<section class="contact" id="contact" style="padding-top: 200px;">
     
+  
+  <div class="container bg-light">
+      <div class="row">
+        <div class="col-lg-12">
+          <div>
+            <h2 class="display-5 fw-bold lh-1 mb-3"><i class="bi bi-envelope-open bi-primary"></i> Contactez-nous</h2>
+            <p class="lead text-info fw-bold lh-1 mb-3"><i class="bi bi-arrow-return-right bi-information"></i> Vos infos restent chez nous !</p>
+            <?php if($_GET['msg']=='send'){echo($msg);} ?>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Wrapper container -->
+    <div class="container bg-light py-4">
 
+      <!-- ====== FORMULAIRE ====== -->
+      <form method="post">
 
-    <footer class="footer">
-        <!-- Call-action -->
-        <div class="call-action">
-            <div class="container">
-                <div class="inner-content">
-                    <div class="row align-items-center">
-                        <div class="col-12 align-center">
-                            <h2>Musique Brioude Boutique</h2>
-                            <hr>
-                            <p class="project">Projet réalisé en équipe.</p> 
-                            <hr class="secondaryHr mx-auto">
-                            <p class="credits">Coded by MARBOUTIN Pierre, VENANT Jean-Phillippe et LEBRE Damien.</p>
-                            <p class="design">Designed by LEBRE Damien.</p>    
-                            <hr class="secondaryHr mx-auto">                            
-                            <p class="cci">Formation DWWM CCI Brioude 2021/2022.</p>
-                        </div>
-                            
+        <!-- Name input -->
+        <div class="mb-3">
+          <label class="form-label" for="name">Nom</label>
+          <input class="form-control" type="text" placeholder="Nom" name="name" required />
+        </div>
+
+        <!-- firstname input -->
+        <div class="mb-3">
+          <label class="form-label" for="firstname">Prénom</label>
+          <input class="form-control" type="text" placeholder="Prénom" name="firstname" required />
+        </div>
+
+        <!-- Email address input -->
+        <div class="mb-3">
+          <label class="form-label" for="email">Email</label>
+          <input class="form-control" type="email" name="email" placeholder="Email" required />
+          <xlall id="email" class="form-text text-info"><i class="bi bi-arrow-return-right bi-information"></i> Nous ne partageons jamais votre e-mail !</xlall>
+        </div>
+
+        <!-- Subject input -->
+        <div class="mb-3">
+          <label class="form-label" for="subject">Objet</label>
+          <input class="form-control" type="text" name="subject" placeholder="Objet" required />
+        </div>
+
+        <!-- Message input -->
+        <div class="mb-3">
+          <label class="form-label" for="message">Message</label>
+          <textarea class="form-control" name="message" type="text" placeholder="Message" style="height: 10rem;"></textarea>
+        </div>
+
+        <!-- Form submit Plus de détails -->
+        <div class="text-center">
+          <button class="btn btn-danger btn-lg btn-hover" type="submit" name="submit">Envoyer <i class="bi bi-envelope"></i></button>
+        </div>
+
+      </form>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <!-- Call-action -->
+    <div class="call-action">
+        <div class="container">
+            <div class="inner-content">
+                <div class="row align-items-center">
+                    <div class="col-12 align-center">
+                        <h2>Musique Brioude Boutique</h2>
+                        <hr>
+                        <p class="project">Projet réalisé en équipe.</p> 
+                        <hr class="secondaryHr mx-auto">
+                        <p class="credits">Coded by MARBOUTIN Pierre, VENANT Jean-Phillippe et LEBRE Damien.</p>
+                        <p class="design">Designed by LEBRE Damien.</p>    
+                        <hr class="secondaryHr mx-auto">                            
+                        <p class="cci">Formation DWWM CCI Brioude 2021/2022.</p>
                     </div>
+                        
                 </div>
             </div>
         </div>
-        <!-- End Call-action -->
-    </footer>    
+    </div>
+    <!-- End Call-action -->
+</footer>    
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
