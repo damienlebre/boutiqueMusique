@@ -100,7 +100,7 @@ footer {
     background-color: #131418;  
     text-align: center;
     margin-top: 100px;
-    position: fixed;    
+    /* position: fixed;     */
     bottom: 0;    
     width: 100%;  
     color: #f2f5f7;
@@ -260,6 +260,10 @@ a:hover {
     letter-spacing: -10px;
     margin-bottom: 0;
 }
+/* ---------CARROUSSEL------------ */
+.carroussel{
+    margin-top: 15vh;
+}
 /* -------------/LOGIN FORM---------- */
 /* ------REGISTER FORM--------------- */
 .text-darkyellow {
@@ -360,4 +364,8 @@ a:hover {
     font-weight: 800;
     letter-spacing: -10px;
     margin-bottom: 0;
+}
+/* INSTRUMENTS */
+.lesCards{
+    margin-top: 20vh;
 }

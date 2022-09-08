@@ -7,11 +7,11 @@
     <link href="assets\css\bootstrap.min.css" rel="stylesheet">
     <link href="assets\css\style.css" rel="stylesheet">
     <script defer src="assets/js/bootstrap.bundle.js"></script>
-    <script defer src="assets/js/script.js"></script>
-    <title>Register form</title>
+    <link rel="stylesheet" href="assets\css\style.css">
+    <title>Document</title>
 </head>
 <body>
-    <!-- NAVBAR -->
+ <!-- NAVBAR -->
  <nav class="navbar navbar-expand-lg navbar-dark text-uppercase fixed-top shadow p-3 mb-5 bg-body rounded" id="mainNav">
     <div class="container-fluid">
       <a id="titleNavbar" class="navbar-brand" href="#page-top">Nom de la boite</a>
@@ -64,41 +64,48 @@
       </div>
     </div>
   </nav>
-<!-- /NAVBAR -->
-<!-- -REGISTERFORM -->
-    <div class="register-container text-center animated flipInX">
-        <div>
-            <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
-        </div>
-            <h3>S'inscrire sur SuperForum</h3>                    
-        <div class="container-content ">
-            <form class="margin-t" method="post">
-                    <input type="checkbox" name="raison">
-                <div class="form-group">
-                <label for="username">Choisir votre nom d'utilisateur :</label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" required="">
-                </div>
-                <div class="form-group">
-                <label for="username">Choisir votre mot de passe :</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="*****" required="">
-                </div>
-                <div class="form-group">
-                <label for="password_confirm">Confirmation de votre mot de passe: </label>
-                    <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="*****" required="">
-                </div>
-                <div class="form-group">
-                    <label for="mail">Adresse mail: </label>
-                    <input type="mail" class="form-control" id="mail" name="mail" placeholder="mon@mail.com" required="">
-                </div>
-                <button type="submit" class="form-button button-l rounded margin-b">S'inscrire</button>
 
-               
-                <p class="text-whitesmoke text-center"><small>Vous avez déja un compte?</small></p>
-                <a class="text-darkyellow" href=""><small>Connectez-vous</small></a>
-            </form>
-            <p class="margin-t text-whitesmoke"><small> Projet Test &copy; 2022</small> </p>
+  <section class="lesCards">
+    <div class="container my-5">
+        
+        <div class="row row-cols g-2 g-md-2 g-lg-4 ">
+        <hr class="my-1">
+        <!-- card 1 -->
+        <div class="card col-12 col-md-4 border-0 bg-light my-3 ">
+            <div class="card-body d-flex flex-column align-content-end p-0">
+            <h2 class="card-title text-center fs-3">Guitares Electriques</h2>
+            <img src="assets/img/electric.jpg" class="card-img-top" alt="...">
+
+            <p class="card-text fs-6">Découvrez notre gameme de guitares électriques.</p>
+            <a href="https://legends.pokemon.com/fr-fr/story/" target="_blank" class="btn text-white fw-bolder rounded-pill mt-auto bd-highlight" style="background-color: #fe0016; width: 100%;"">Go &gt</a>           
+            </div>
+        </div>     
+        <!-- card 2 -->
+        <div class="card col-12 col-md-4 border-0 bg-light my-3 ">
+            <div class="card-body d-flex flex-column align-content-end p-0">
+            <h2 class="card-title text-center fs-3 ">Basses Electriques</h2>
+            <img src="assets/img/basse.jpg" class="card-img-top" alt="...">
+
+            <p class="card-text">Découvrez notre gameme de basses électriques.</p>
+            <a href="https://legends.pokemon.com/fr-fr/gameplay/" target="_blank" class="btn text-white fw-bolder rounded-pill mt-auto bd-highlight" style="background-color: #fe0016; width: auto;">Go &gt</a>           
+            </div>
+        </div>          
+        <!-- card 3 -->
+        <div class="card col-12 col-md-4 border-0 bg-light my-3 ">
+            <div class="card-body d-flex flex-column align-content-end p-0">
+            <h2 class="card-title text-center fs-3">Guitares accoustiques</h2>
+            <img src="assets/img/guitare.jpg" class="card-img-top" alt="...">
+
+            <p class="card-text">Découvrez notre gameme de guitares accoustiques.</p>            
+            <a href="https://legends.pokemon.com/fr-fr/pokemon/" target="_blank" class="btn text-white fw-bolder rounded-pill mt-auto bd-highlight" style="background-color: #fe0016; width: 100%;"">Go &gt</a>           
+            </div>
+        </div>
         </div>
     </div>
+</section>
+
+    
+
 
     <footer class="footer">
         <!-- Call-action -->
@@ -123,6 +130,5 @@
         </div>
         <!-- End Call-action -->
     </footer>    
-
 </body>
 </html>
